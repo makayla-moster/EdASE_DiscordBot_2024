@@ -27,7 +27,7 @@ async def load_cogs():
 @tasks.loop(time=datetime.time(hour=11, minute=30)) #7:30 EST
 async def backchannel_loop():
     weekday = datetime.datetime.now().weekday()
-    weekdays = [0, 1, 2, 3, 4, 5]
+    weekdays = [0, 1, 2, 3, 4]
     if weekday in weekdays: # monday = 0, sunday = 6
         channel = bot.get_channel(int(BACKCHANNEL))
         response = "Please use the following thread for today's backchannel discussions."

@@ -91,7 +91,7 @@ async def announcement_loop():
     weekdays = [0, 1, 2, 3, 4]
     if weekday in weekdays: # monday = 0, sunday = 6
         channel = bot.get_channel(int(ANNOUNCEMENTS))
-        response = "Hey <@&1250861795329966140>! Just a reminder that camp starts in 20 minutes! We'll see you soon! :)"
+        response = "Hey <@&1250861795329966140>! Just a reminder that our last day of camp starts in 20 minutes! We'll see you soon! :)"
         msg = await channel.send(response)
 
 
@@ -107,8 +107,8 @@ async def on_ready():
     if not announcement_loop.is_running():
         announcement_loop.start()
         print("announcement_loop started")
-    if not teamchannel_loop.is_running():
-        teamchannel_loop.start()
-        print("teamchannel_loop started")
+    # if not teamchannel_loop.is_running():
+    #     teamchannel_loop.start()
+    #     print("teamchannel_loop started")
 
 bot.run(TOKEN)
